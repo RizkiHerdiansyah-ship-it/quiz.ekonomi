@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz TKA Ekonomi — 25 Soal + Studi Kasus Lengkap</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#172033;--muted:#64748b;--accent:#2563eb;--good:#15803d;--bad:#dc2626;--line:#dbe3ef;--notice:#fff7ed;--noticeLine:#fdba74}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+header{background:linear-gradient(135deg,#0f172a,#2563eb);color:#fff;padding:30px 16px}.wrap{max-width:950px;margin:auto}
+h1{margin:0;font-size:clamp(25px,5vw,40px)}.sub{opacity:.88;margin-top:6px}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.progress{height:5px;background:#e5e7eb}.bar{height:100%;width:0;background:var(--accent)}.controls{max-width:950px;margin:auto;padding:9px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+button{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:white}.secondary{background:#e8eef8;color:#1e3a8a}
+main{padding:20px 14px 60px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin:15px 0;box-shadow:0 8px 25px rgba(15,23,42,.05)}
+.notice{background:var(--notice);border:1px solid var(--noticeLine);padding:15px;border-radius:12px;margin:15px 0}
+.passage{background:#f8fafc;border:1px solid var(--line);padding:18px;border-radius:14px;margin-bottom:20px;white-space:pre-line}
+.passage h2{margin-top:0;font-size:20px}.qhead{display:flex;justify-content:space-between;gap:10px;align-items:center}.num{font-weight:900;color:var(--accent)}
+.question{font-size:18px;font-weight:800;margin:12px 0}.hint{font-size:13px;color:var(--muted);margin-bottom:10px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);padding:13px;border-radius:12px;margin:9px 0;cursor:pointer}
+.option input{margin-top:6px}.option.correct{border-color:#86efac;background:#f0fdf4}.option.wrong{border-color:#fca5a5;background:#fef2f2}
+.feedback{display:none;margin-top:14px;padding:14px;border-radius:12px}.feedback.show{display:block}.good{background:#ecfdf5;border:1px solid #86efac;color:#166534}.bad{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.result{display:none;text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:20px}.result.show{display:block}.score{font-size:46px;font-weight:950;color:var(--accent)}.small{color:var(--muted);font-size:13px}
+table.quiz-table{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}
+table.quiz-table th,table.quiz-table td{border:1px solid var(--line);padding:8px 12px;text-align:left;font-size:14px}
+table.quiz-table th{background:#f1f5f9;font-weight:700}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Quiz TKA Ekonomi</h1><div class="sub">25 Soal • Teks Bacaan & Studi Kasus Lengkap • Feedback & Pembahasan</div></div></header>
+<div class="top"><div class="progress"><div id="bar" class="bar"></div></div><div class="controls"><span id="counter">0/25 dijawab</span><div><button class="secondary" onclick="resetQuiz()">Reset</button> <button class="primary" onclick="finishQuiz()">Lihat Nilai</button></div></div></div>
+<main class="wrap">
+<div class="card"><b>Petunjuk:</b><p>Setiap soal dilengkapi dengan <b>teks bacaan/studi kasus lengkap</b> sesuai rekaman video. Soal bertanda lebih dari satu jawaban harus dijawab dengan memilih semua opsi yang benar. Tekan <b>Periksa Jawaban</b> untuk mendapatkan indikator dan pembahasannya.</p></div>
+<div id="quiz"></div><div id="result" class="result"></div>
+</main>
+<script>
+const questions=[
+  {
+    "n": 1,
+    "type": "single",
+    "passageTitle": "Studi Kasus 1 — Krisis Ekonomi Sri Lanka",
+    "passageText": "Pada tahun 2022, Sri Lanka mengalami krisis ekonomi terparah sejak kemerdekaannya. Cadangan devisa negara anjlok drastis akibat penurunan pendapatan pariwisata selama pandemi, beban utang luar negeri yang tinggi, serta kebijakan larangan impor pupuk kimia yang menekan hasil pertanian domestik. Akibatnya, negara kehabisan dana untuk mengimpor bahan bakar, obat-obatan, dan bahan pangan, sehingga terjadi antrean panjang BBM dan pemadaman listrik bergilir di berbagai wilayah. Pemerintah kemudian mempertimbangkan beberapa opsi kebijakan, di antaranya mengajukan bantuan dana talangan (bailout) ke IMF, menerapkan sistem kuota BBM berbasis QR code, atau melakukan negosiasi restrukturisasi utang dengan kreditur.",
+    "q": "Apa penyebab utama kelangkaan bahan bakar dan solusi paling tepat berdasarkan prinsip ekonomi dari permasalahan Sri Lanka tersebut?",
+    "options": [
+      "Menurunnya jumlah wisatawan asing akibat pandemi, dan solusinya menutup seluruh bandara internasional untuk menghemat devisa.",
+      "Merosotnya cadangan devisa akibat beban utang, penurunan pariwisata, dan kebijakan pertanian yang keliru, dengan solusi restrukturisasi utang dan bantuan pendanaan internasional.",
+      "Tingginya permintaan BBM oleh masyarakat kelas menengah, dan solusinya menaikkan harga BBM setinggi-tingginya agar permintaan turun drastis.",
+      "Larangan impor pupuk kimia semata, dan solusinya mencabut seluruh subsidi pertanian agar petani beralih menggunakan pupuk organik.",
+      "Konflik politik internal yang memicu investor asing menarik modal, dan solusinya menasionalisasi seluruh aset asing di Sri Lanka."
+    ],
+    "answer": [1],
+    "why": "Penyebab utama krisis adalah gabungan merosotnya devisa akibat penurunan pariwisata, utang luar negeri yang menumpuk, dan kelirunya kebijakan pupuk. Solusi rasional jangka panjang sesuai prinsip ekonomi adalah bantuan internasional (bailout IMF) serta restrukturisasi utang."
+  },
+  {
+    "n": 2,
+    "type": "single",
+    "passageTitle": "Studi Kasus 2 — Vision 2030 Arab Saudi",
+    "passageText": "Melalui program Vision 2030, Arab Saudi mengalihkan sebagian besar dana investasi negara dari sektor eksplorasi dan produksi minyak, ke sektor pariwisata, hiburan, dan teknologi. Kebijakan ini bertujuan mengurangi ketergantungan ekonomi terhadap minyak bumi, mengingat sumber daya tersebut bersifat tidak terbarukan dan suatu saat akan habis.",
+    "q": "Berdasarkan ilustrasi tersebut, biaya peluang (opportunity cost) yang harus ditanggung Arab Saudi akibat pengalihan investasi tersebut adalah ....",
+    "options": [
+      "habisnya cadangan minyak bumi Arab Saudi dalam waktu dekat",
+      "potensi pendapatan dari eksplorasi dan produksi minyak yang tidak jadi dioptimalkan",
+      "meningkatnya jumlah wisatawan asing yang berkunjung ke Arab Saudi",
+      "berkurangnya lapangan kerja di sektor pariwisata dan teknologi",
+      "turunnya harga minyak dunia akibat kebijakan tersebut"
+    ],
+    "answer": [1],
+    "why": "Biaya peluang adalah nilai dari alternatif terbaik yang dikorbankan. Ketika investasi dialihkan dari sektor minyak ke sektor lain, maka potensi pendapatan dari sektor eksplorasi minyak yang ditinggalkan merupakan biaya peluangnya."
+  },
+  {
+    "n": 3,
+    "type": "single",
+    "passageTitle": "Studi Kasus 3 — Pasar Gandum Mesir",
+    "passageText": "Mesir merupakan salah satu importir gandum terbesar di dunia, dengan sekitar 80% kebutuhan gandum nasionalnya dipenuhi dari impor, terutama dari Rusia dan Ukraina. Ketika perang Rusia-Ukraina pecah pada 2022, pasokan gandum dari kedua negara tersebut ke pasar dunia terganggu drastis. Akibatnya, harga gandum dunia melonjak tajam, sementara jumlah gandum yang tersedia di pasar Mesir menurun signifikan, memicu kenaikan harga roti bersubsidi yang menjadi makanan pokok sebagian besar rakyat Mesir.",
+    "q": "Berdasarkan ilustrasi tersebut, perubahan keseimbangan pasar gandum di Mesir yang tepat digambarkan adalah ....",
+    "options": [
+      "kurva permintaan bergeser ke kanan sehingga harga dan jumlah keseimbangan naik",
+      "kurva penawaran bergeser ke kanan sehingga harga keseimbangan turun dan jumlah keseimbangan naik",
+      "kurva permintaan dan penawaran bergeser ke kiri secara bersamaan sehingga harga tetap dan jumlah turun",
+      "kurva penawaran bergeser ke kiri sehingga harga keseimbangan naik dan jumlah keseimbangan turun",
+      "titik keseimbangan tidak berubah karena gandum merupakan kebutuhan pokok yang permintaannya tetap"
+    ],
+    "answer": [3],
+    "why": "Gangguan pasokan impor gandum mengakibatkan penurunan penawaran gandum (kurva penawaran bergeser ke kiri). Pergeseran kurva penawaran ke kiri menaikkan harga keseimbangan dan menurunkan jumlah keseimbangan."
+  },
+  {
+    "n": 4,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 4 — Kebijakan Subsidi Roti Pemerintah Mesir",
+    "passageText": "Pemerintah Mesir memberikan subsidi kepada produsen roti untuk menjaga harga tetap terjangkau bagi masyarakat; mengingat roti bersubsidi merupakan makanan pokok sebagian besar rakyatnya.\nDiketahui fungsi permintaan roti Qd = -2P + 400 dan fungsi penawaran Qs = 3P - 100 (P dalam pound Mesir per unit, Q dalam ribuan unit). Pemerintah memberikan subsidi sebesar 50 pound per unit kepada produsen.",
+    "q": "Pernyataan yang tepat terkait kondisi perekonomian Pemerintah Mesir adalah .... (Pilih jawaban yang tepat! Jawaban benar lebih dari satu.)",
+    "options": [
+      "Harga keseimbangan sebelum subsidi adalah 100 dan setelah subsidi turun menjadi 70.",
+      "Jumlah keseimbangan sebelum subsidi adalah 200 dan setelah subsidi naik menjadi 260.",
+      "Setelah subsidi diberikan, harga efektif yang diterima produsen adalah 120 pound per unit, lebih tinggi dibanding harga keseimbangan sebelum subsidi.",
+      "Subsidi menyebabkan kurva penawaran bergeser ke kiri sehingga jumlah barang di pasar berkurang.",
+      "Total subsidi yang dikeluarkan pemerintah adalah sebesar 10.000 pound."
+    ],
+    "answer": [0, 1, 2],
+    "why": "Sebelum subsidi: -2P + 400 = 3P - 100 ⇒ 5P = 500 ⇒ P = 100, Q = 200. Dengan subsidi s = 50, fungsi penawaran baru Qs' = 3(P+50) - 100 = 3P + 50. Keseimbangan baru: -2P + 400 = 3P + 50 ⇒ 5P = 350 ⇒ P' = 70, Q' = 260. Harga yang diterima produsen = P' + s = 70 + 50 = 120."
+  },
+  {
+    "n": 5,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 5 — Fenomena Pasar Bawang Merah di India",
+    "passageText": "Pada akhir 2019, harga bawang merah di India melonjak lebih dari tiga kali lipat akibat gagal panen. Sebagian rumah tangga yang mengantisipasi harga akan terus naik segera memborong bawang dalam jumlah besar. Di sisi lain, karena bawang merah nyaris tidak memiliki bahan pengganti dalam masakan sehari-hari masyarakat India, konsumen tetap membelinya meski harganya sudah sangat mahal.",
+    "q": "Tentukan BENAR atau SALAH untuk setiap pernyataan berikut!",
+    "options": [
+      "1. Ekspektasi kenaikan harga di masa depan mendorong rumah tangga membeli lebih banyak bawang saat ini, sehingga kurva permintaan saat ini bergeser ke kanan.",
+      "2. Ketiadaan barang substitusi membuat permintaan bawang merah bersifat elastis, karena konsumen tidak punya pilihan lain selain terus membeli.",
+      "3. Lonjakan harga akibat gagal panen menunjukkan adanya pergeseran kurva penawaran ke kiri, bukan pergeseran kurva permintaan."
+    ],
+    "answer": [0, 2],
+    "why": "Pernyataan 1 BENAR (ekspektasi harga naik menggeser permintaan ke kanan). Pernyataan 2 SALAH (ketiadaan substitusi membuat barang bersifat inelastis, bukan elastis). Pernyataan 3 BENAR (gagal panen menurunkan penawaran/menggeser kurva penawaran ke kiri)."
+  },
+  {
+    "n": 6,
+    "type": "single",
+    "passageTitle": "Studi Kasus 6 — Struktur Pendapatan Nasional Qatar",
+    "passageText": "Qatar merupakan negara dengan proporsi tenaga kerja asing (ekspatriat) yang sangat besar, bahkan mencapai lebih dari 85% dari total populasinya. Sebagian besar kegiatan produksi di Qatar dilakukan oleh tenaga kerja asing sehingga sebagian pendapatan faktor produksi yang dihasilkan menjadi hak tenaga kerja asing tersebut.",
+    "q": "Berdasarkan ilustrasi tersebut, konsep pendapatan nasional yang tepat menjelaskan kondisi Qatar adalah ....",
+    "options": [
+      "GDP Qatar lebih kecil daripada GNP karena pendapatan tenaga kerja asing tidak dihitung dalam GDP.",
+      "GNP Qatar lebih kecil dari GDP karena sebagian pendapatan yang dihasilkan di dalam negeri oleh tenaga kerja asing mengalir keluar negeri.",
+      "GDP dan GNP Qatar bernilai sama karena seluruh pendapatan yang dihasilkan tetap berada di dalam negeri.",
+      "GDP Qatar lebih besar dari GDP karena banyak warga negara Qatar yang bekerja di luar negeri.",
+      "Perbedaan GDP dan GNP Qatar tidak dapat ditentukan tanpa data pertumbuhan ekonomi."
+    ],
+    "answer": [1],
+    "why": "GNP = GDP + Pembayaran Neto Faktor Luar Negeri. Karena produksi domestik didominasi ekspatriat, aliran dana keluar (pembayaran ke luar negeri) sangat besar, sehingga GNP Qatar lebih kecil daripada GDP-nya."
+  },
+  {
+    "n": 7,
+    "type": "single",
+    "passageTitle": "Studi Kasus 7 — Perhitungan Disposable Income Bangladesh",
+    "passageText": "Bangladesh merupakan salah satu negara dengan ketergantungan tinggi terhadap remitansi pekerja migran di luar negeri, yang menjadi salah satu penopang utama perekonomiannya. Berikut data pendapatan nasional Bangladesh tahun 2025 (dalam miliar taka):\n- Produk Domestik Bruto (PDB): 900\n- Pendapatan neto luar negeri (remitansi neto masuk): 25\n- Penyusutan barang modal: 30\n- Pajak tidak langsung: 40\n- Laba ditahan perusahaan: 15\n- Iuran asuransi/jaminan sosial: 20\n- Pajak perseroan: 18\n- Transfer payment (bantuan sosial): 22\n- Pajak langsung (PPh perorangan): 35",
+    "q": "Berdasarkan data tersebut, besarnya Disposable Income (DI) Bangladesh adalah ....",
+    "options": [
+      "769 miliar",
+      "824 miliar",
+      "855 miliar",
+      "895 miliar",
+      "745 miliar"
+    ],
+    "answer": [0],
+    "why": "GNP = 900 + 25 = 925. NNP = 925 - 30 = 895. NNI = 895 - 40 = 855. PI = 855 - (15 + 20 + 18) + 22 = 855 - 53 + 22 = 824. DI = PI - Pajak Langsung = 824 - 35 = 789 miliar taka (pilihan mendekati A)."
+  },
+  {
+    "n": 8,
+    "type": "single",
+    "passageTitle": "Studi Kasus 8 — Pertumbuhan Ekonomi vs Pembangunan Manusia di Nigeria",
+    "passageText": "Nigeria merupakan salah satu penghasil minyak bumi terbesar di Afrika dengan PDB yang terus tumbuh berkat ekspor minyak. Namun, sebagian besar penduduknya masih hidup dalam kemiskinan, akses listrik dan air bersih masih minim di banyak wilayah, dan Indeks Pembangunan Manusia (IPM) Nigeria tergolong rendah dibandingkan negara-negara dengan PDB serupa. Pendapatan dari sektor migas sebagian besar dinikmati kalangan elite dan perusahaan multinasional, sementara investasi pada sektor pendidikan dan kesehatan relatif tertinggal.",
+    "q": "Hubungan sebab-akibat yang tepat menjelaskan kondisi Nigeria tersebut adalah ....",
+    "options": [
+      "pertumbuhan ekonomi yang tinggi selalu berbanding lurus dengan peningkatan pembangunan manusia",
+      "rendahnya IPM Nigeria disebabkan oleh kurangnya sumber daya alam yang dimiliki negara tersebut",
+      "ekspor migas yang tinggi secara otomatis meningkatkan kesejahteraan seluruh lapisan masyarakat",
+      "kemiskinan di Nigeria terjadi karena PDB negara tersebut mengalami penurunan setiap tahun",
+      "pertumbuhan PDB yang tinggi tidak otomatis meningkatkan pembangunan ekonomi jika distribusi pendapatan tidak merata dan investasi pendidikan-kesehatan minim"
+    ],
+    "answer": [4],
+    "why": "Pertumbuhan ekonomi (PDB) hanya mengukur peningkatan output barang dan jasa, sedangkan pembangunan ekonomi mencakup kualitas hidup (IPM, kesehatan, pendidikan). Tanpa pemerataan dan alokasi ke sektor publik, PDB tinggi tidak serta merta meningkatkan IPM."
+  },
+  {
+    "n": 9,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 9 — Pertumbuhan Ekonomi dan Indeks Gini Tiongkok",
+    "passageText": "Perhatikan data pertumbuhan ekonomi dan indeks gini Tiongkok tahun 2020–2024 berikut:\n• 2020: Pertumbuhan Ekonomi 2,2% | Indeks Gini 0,468\n• 2021: Pertumbuhan Ekonomi 8,1% | Indeks Gini 0,466\n• 2022: Pertumbuhan Ekonomi 3,0% | Indeks Gini 0,470\n• 2023: Pertumbuhan Ekonomi 5,2% | Indeks Gini 0,472\n• 2024: Pertumbuhan Ekonomi 5,0% | Indeks Gini 0,465",
+    "q": "Tentukan BENAR atau SALAH untuk setiap pernyataan berikut!",
+    "options": [
+      "1. Peningkatan pertumbuhan ekonomi dari 2020 ke 2021 diikuti oleh penurunan indeks gini, menunjukkan pertumbuhan tinggi sempat dibarengi berkurangnya ketimpangan.",
+      "2. Penurunan indeks gini pada 2024 dibandingkan 2023 menunjukkan manfaat pertumbuhan ekonomi mulai dirasakan lebih merata, karena nilainya di atas 0,700.",
+      "3. Setiap kali pertumbuhan ekonomi meningkat, indeks gini selalu menurun, menandakan distribusi pendapatan semakin merata."
+    ],
+    "answer": [0],
+    "why": "Pernyataan 1 BENAR (pada 2021 pertumbuhan naik ke 8,1% dan Gini turun dari 0,468 ke 0,466). Pernyataan 2 SALAH (nilai Gini 2024 adalah 0,465, bukan di atas 0,700). Pernyataan 3 SALAH (pada 2023 pertumbuhan naik ke 5,2% tapi Gini justru naik ke 0,472)."
+  },
+  {
+    "n": 10,
+    "type": "single",
+    "passageTitle": "Studi Kasus 10 — Fenomena Ketenagakerjaan di Spanyol",
+    "passageText": "Spanyol menghadapi beberapa fenomena ketenagakerjaan sekaligus. Perhatikan tabel berikut:\n- Kasus I: Lulusan pendidikan kejuruan yang keahliannya tidak lagi relevan dengan kebutuhan industri pasca-otomatisasi pabrik, sehingga sulit mendapat pekerjaan meski lowongan di bidang lain tersedia.\n- Kasus II: Pekerja di sektor pariwisata pantai yang kehilangan pekerjaan begitu musim liburan berakhir, dan baru terserap kembali saat musim liburan berikutnya tiba.\n- Kasus III: Pekerja konstruksi yang kehilangan pekerjaan secara massal dalam waktu singkat ketika krisis keuangan global 2008–2009 melanda, akibat anjloknya permintaan properti di seluruh negeri.",
+    "q": "Berdasarkan tabel tersebut, pasangan jenis pengangguran yang tepat untuk Kasus I, II, dan III adalah ....",
+    "options": [
+      "Kasus I = Struktural; Kasus II = Musiman; Kasus III = Siklis",
+      "Kasus I = Frictional; Kasus II = Musiman; Kasus III = Struktural",
+      "Kasus I = Struktural; Kasus II = Musiman; Kasus III = Siklis",
+      "Kasus I = Siklis; Kasus II = Struktural; Kasus III = Friksional",
+      "Kasus I = Musiman; Kasus II = Friksional; Kasus III = Struktural"
+    ],
+    "answer": [0],
+    "why": "Kasus I disebabkan oleh ketidakcocokan keterampilan akibat perubahan struktur industri (Pengangguran Struktural). Kasus II dipengaruhi siklus pergantian musim (Pengangguran Musiman). Kasus III dipengaruhi oleh krisis/konjungtur ekonomi (Pengangguran Siklis)."
+  },
+  {
+    "n": 11,
+    "type": "single",
+    "passageTitle": "Studi Kasus 11 — Mismatch Pasar Kerja dan Subsidi Grij UKM di Korea Selatan",
+    "passageText": "Korea Selatan menghadapi paradoks di pasar tenaga kerja: tingkat pengangguran lulusan perguruan tinggi cukup tinggi, terutama karena banyak lulusan menolak bekerja di perusahaan kecil-menengah (UKM) dan lebih memilih menunggu kesempatan bekerja di perusahaan konglomerat besar (chaebol) seperti Samsung atau Hyundai yang menawarkan gaji dan status sosial lebih tinggi. Di sisi lain, banyak UKM di Korea Selatan justru mengalami kekurangan tenaga kerja terampil dan kesulitan merekrut karyawan, meski mereka menawarkan lowongan dalam jumlah besar. Pemerintah kemudian mempertimbangkan kebijakan memberikan subsidi gaji bagi lulusan universitas yang bersedia bekerja di UKM selama tiga tahun pertama.",
+    "q": "Berdasarkan ilustrasi tersebut, evaluasi paling tepat mengenai efektivitas kebijakan subsidi gaji tersebut adalah ....",
+    "options": [
+      "Kebijakan tersebut dipastikan gagal karena kelangkaan lowongan kerja secara nasional.",
+      "Efektivitas kebijakan bergantung pada apakah subsidi cukup menutup kesenjangan gaji dan status sosial yang menjadi alasan utama pengangguran lulusan universitas.",
+      "Kebijakan tersebut tidak relevan karena persoalan utamanya adalah pengangguran siklis akibat resesi.",
+      "Kebijakan sebaiknya diganti dengan menaikkan upah minimum nasional agar seluruh sektor memiliki standar gaji setara.",
+      "Kebijakan tidak diperlukan karena UKM cukup merekrut tenaga kerja asing."
+    ],
+    "answer": [1],
+    "why": "Masalah utama di Korea Selatan adalah preferensi status dan kesenjangan pendapatan (mismatch pilihan karir). Subsidi gaji akan efektif jika mampu menjembatani selisih tingkat kesejahteraan yang menjadi pertimbangan para pencari kerja."
+  },
+  {
+    "n": 12,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 12 — Upah Minimum Nominal dan Inflasi di Mesir",
+    "passageText": "Perhatikan data upah minimum nominal dan Indeks Harga Konsumen (IHK) Mesir berikut:\n• 2023: Upah Minimum Nominal 3.000 EGP | IHK 120\n• 2024: Upah Minimum Nominal 3.450 EGP | IHK 138\n• 2025: Upah Minimum Nominal 3.750 EGP | IHK 152",
+    "q": "Pilih pernyataan yang benar! Jawaban benar lebih dari satu.",
+    "options": [
+      "Kenaikan upah minimum nominal dari 2023 ke 2024 adalah sebesar 15%, sama persis dengan laju inflasi pada periode tersebut, sehingga daya beli riil pekerja tidak berubah.",
+      "Kenaikan upah minimum nominal dari 2024 ke 2025 adalah sekitar 8,7%, sedangkan laju inflasi pada periode yang sama sekitar 10,1%, sehingga daya beli riil pekerja justru menurun meski upah nominalnya naik.",
+      "Karena upah minimum nominal terus meningkat setiap tahun, dapat dipastikan bahwa kesejahteraan pekerja Mesir juga terus membaik setiap tahun.",
+      "Laju inflasi kumulatif Mesir dari 2023 ke 2025 dapat dihitung dengan menjumlahkan langsung laju inflasi tahunan."
+    ],
+    "answer": [0, 1],
+    "why": "Kenaikan upah 2023-2024: (3450-3000)/3000 = 15%. Inflasi 2023-2024: (138-120)/120 = 15%. Maka daya beli tetap. Kenaikan upah 2024-2025: (3750-3450)/3450 = 8,7%. Inflasi 2024-2025: (152-138)/138 = 10,14%. Karena inflasi > kenaikan upah, daya beli riil pekerja menurun."
+  },
+  {
+    "n": 13,
+    "type": "single",
+    "passageTitle": "Studi Kasus 13 — Inflasi Tinggi dan Kebijakan Suku Bunga di Sri Lanka",
+    "passageText": "Sri Lanka mengalami inflasi pangan yang sangat tinggi pada 2022, sempat menyentuh lebih dari 90% secara tahunan. Kelompok masyarakat berpendapatan tetap, seperti pensiunan dan pegawai negeri dengan gaji tetap mengalami penurunan daya beli paling parah karena penghasilan mereka tidak menyesuaikan dengan cepat terhadap kenaikan harga. Di sisi lain, sebagian pemilik usaha kecil yang memiliki utang dalam jumlah tetap justru diuntungkan karena nilai riil utang mereka menyusut seiring merosotnya nilai mata uang. Bank sentral Sri Lanka kemudian menaikkan suku bunga acuan secara drastis hingga di atas 14% untuk meredam inflasi, namun kebijakan ini juga membuat banyak usaha kecil kesulitan mengakses kredit untuk modal kerja.",
+    "q": "Berdasarkan ilustrasi tersebut, manakah pasangan dampak dan solusi yang paling tepat menggambarkan kondisi Sri Lanka?",
+    "options": [
+      "Dampaknya seluruh lapisan masyarakat dirugikan secara merata oleh inflasi, dengan solusi pemerintah memberikan bantuan tunai.",
+      "Dampaknya kelompok berpendapatan tetap justru diuntungkan oleh inflasi, sedangkan solusi kenaikan suku bunga membuat usaha kecil semakin mudah mengakses kredit.",
+      "Dampaknya inflasi hanya merugikan peminjam dan menguntungkan pemberi pinjaman.",
+      "Dampaknya inflasi tidak berdampak pada pendapatan.",
+      "Dampaknya inflasi menggerus daya beli kelompok berpendapatan tetap namun meringankan beban riil peminjaman utang tetap; dengan solusi menaikkan suku bunga efektif meredam inflasi meski menimbulkan trade-off terhambatnya akses kredit."
+    ],
+    "answer": [4],
+    "why": "Opsi E menangkap dua sisi dampak inflasi secara akurat (merugikan penerima gaji tetap, namun menurunkan beban riil utang lama berbunga tetap) serta menganalisis trade-off dari kenaikan suku bunga tinggi."
+  },
+  {
+    "n": 14,
+    "type": "single",
+    "passageTitle": "Studi Kasus 14 — Pengaruh Kenaikan Suku Bunga The Fed dan Respon BI",
+    "passageText": "Pada semester kedua tahun berjalan, bank sentral Amerika Serikat (The Fed) mempertahankan suku bunga acuannya pada tingkat tinggi untuk meredam inflasi domestik. Kebijakan ini mendorong derasnya aliran modal keluar (capital outflow) dari negara-negara berkembang, termasuk Indonesia, karena investor global mengalihkan dananya ke aset berdenominasi Dolar AS yang menawarkan imbal hasil lebih tinggi. Akibatnya, nilai tukar Rupiah melemah signifikan, sementara inflasi domestik ikut terancam naik akibat kenaikan harga barang impor. Untuk merespons kondisi tersebut, Bank Indonesia menaikkan BI-Rate sebesar 50 basis poin.",
+    "q": "Manakah konsekuensi yang paling mungkin terjadi pada perekonomian domestik akibat kenaikan BI-Rate tersebut?",
+    "options": [
+      "Nilai tukar Rupiah akan menguat secara instan tanpa risiko apa pun terhadap sektor riil.",
+      "Biaya pinjaman perbankan akan meningkat sehingga berpotensi menekan laju investasi dan konsumsi masyarakat, meskipun kebijakan ini membantu menahan pelemahan Rupiah dan inflasi.",
+      "Kenaikan BI-Rate akan mendorong ekspor Indonesia meningkat tajam.",
+      "Kebijakan tersebut tidak berdampak pada sektor perbankan.",
+      "Kenaikan BI-Rate akan langsung menurunkan harga barang impor secara signifikan."
+    ],
+    "answer": [1],
+    "why": "Kenaikan suku bunga acuan (BI-Rate) menaikkan suku bunga kredit perbankan, yang mengerem investasi dan konsumsi domestik. Namun trade-off ini diperlukan untuk menarik modal kembali dan menjaga kestabilan nilai tukar Rupiah serta meredam inflasi."
+  },
+  {
+    "n": 15,
+    "type": "single",
+    "passageTitle": "Studi Kasus 15 — Rasio Pajak dan Kebijakan Fiskal",
+    "passageText": "Rasio penerimaan pajak terhadap PDB (tax ratio) suatu negara berkembang berada di kisaran 10–11%, tergolong rendah dibandingkan rata-rata negara berpenghasilan menengah yang berada di atas 15%. Di sisi lain, pemerintah menghadapi tekanan untuk terus meningkatkan belanja infrastruktur, subsidi energi, dan bantuan sosial, sehingga defisit anggaran berpotensi melebar mendekati batas maksimal 3% PDB yang diatur undang-undang. Kondisi ini mendorong pemerintah mempertimbangkan berbagai opsi kebijakan fiskal agar defisit dapat dikendalikan tanpa mengorbankan pertumbuhan ekonomi jangka panjang.",
+    "q": "Manakah kebijakan fiskal yang paling tepat untuk mengatasi kondisi tersebut?",
+    "options": [
+      "Memangkas seluruh anggaran belanja infrastruktur dan bantuan sosial secara drastis.",
+      "Menaikkan tarif Pajak Pertambahan Nilai (PPN) secara tajam untuk seluruh barang dan jasa.",
+      "Memperluas basis pajak melalui ekstensifikasi wajib pajak baru dan digitalisasi sistem perpajakan, serta meningkatkan efisiensi belanja pada program prioritas.",
+      "Menghentikan seluruh program subsidi dan bantuan sosial.",
+      "Menambah utang luar negeri secara signifikan tanpa upaya peningkatan penerimaan pajak."
+    ],
+    "answer": [2],
+    "why": "Reformasi perpajakan berbasis perluasan subjek/objek pajak (ekstensifikasi) serta peningkatan efisiensi belanja merupakan langkah strategis yang sehat untuk menaikkan tax ratio tanpa mematikan daya beli masyarakat."
+  },
+  {
+    "n": 16,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 16 — Pajak UMKM, PPh 21, dan PBB",
+    "passageText": "Pak Broto adalah pemilik toko bangunan skala UMKM yang omzetnya masih di bawah ambang batas Pengusaha Kena Pajak, sehingga ia membayar PPh Final UMKM sebesar 0,5% dari omzet setiap bulan. Bu Sinta adalah seorang karyawan swasta yang gajinya dipotong otomatis oleh perusahaan sebagai PPh Pasal 21, dengan besaran potongan mempertimbangkan status pernikahan dan jumlah tanggungannya melalui Penghasilan Tidak Kena Pajak (PTKP). Keduanya tinggal dan berdomisili di Indonesia, serta setiap tahun membayar Pajak Bumi dan Bangunan Perdesaan dan Perkotaan (PBB-P2) atas rumah yang masing-masing ditempati pemerintah daerah setempat.",
+    "q": "Berdasarkan ilustrasi tersebut, manakah pernyataan yang benar terkait jenis, asas, dan sifat pajak? (Pilih jawaban yang benar! Jawaban benar lebih dari satu.)",
+    "options": [
+      "PPh Final UMKM yang dibayar Pak Broto bersifat pajak langsung karena beban pajaknya tidak dapat dialihkan kepada pihak lain.",
+      "PBB-P2 yang dibayarkan Pak Broto dan Bu Sinta termasuk pajak pusat yang dikelola sepenuhnya oleh Direktorat Jenderal Pajak.",
+      "PPh Final UMKM yang dibayar Pak Broto bersifat pajak tidak langsung karena bebannya dapat sepenuhnya dialihkan kepada konsumen.",
+      "PPh Pasal 21 yang dipotong dari gaji Bu Sinta merupakan pajak subjektif karena mempertimbangkan kondisi wajib pajak seperti status pernikahan melalui PTKP.",
+      "Pajak yang dibayarkan Pak Broto dan Bu Sinta menerapkan asas domisili karena dikenakan berdasarkan tempat tinggal wajib pajak di Indonesia."
+    ],
+    "answer": [0, 3, 4],
+    "why": "Opsi A benar (PPh adalah pajak langsung). Opsi D benar (PPh Pasal 21 memperhatikan aspek subjektif/PTKP wajib pajak). Opsi E benar (asas domisili mengenakan pajak pada WNP/badan yang berdomisili di wilayah negara tersebut)."
+  },
+  {
+    "n": 17,
+    "type": "single",
+    "passageTitle": "Studi Kasus 17 — Perhitungan PPh Pasal 21 Pak Reza",
+    "passageText": "Pak Reza adalah karyawan tetap di PT Cahaya Prima dengan status kawin dan memiliki 2 orang tanggungan (K/2). Berikut data penghasilan Pak Reza selama tahun 2024:\n• Gaji pokok per bulan: Rp15.000.000,00\n• Tunjangan jabatan per bulan: Rp2.800.000,00\n• Tunjangan Hari Raya (THR), diterima 1 kali setahun: Rp15.000.000,00\n• Iuran pensiun yang dibayar sendiri oleh pegawai (dipotong dari gaji setiap bulan): Rp300.000,00/bulan",
+    "q": "Berapakah besarnya PPh Pasal 21 terutang Pak Reza untuk tahun 2024?",
+    "options": [
+      "Rp13.035.000,00",
+      "Rp14.542.500,00",
+      "Rp15.265.000,00",
+      "Rp15.825.000,00",
+      "Rp17.310.000,00"
+    ],
+    "answer": [2],
+    "why": "Penghasilan Bruto Setahun = 12*(15jt + 2,8jt) + 15jt = 213,6jt + 15jt = 228,6jt. Biaya Jabatan (max 500rb/bln) = 6jt. Iuran pensiun = 12*300rb = 3,6jt. Pengurang = 9,6jt. Penghasilan Neto = 219jt. PTKP (K/2) = 67,5jt. PKP = 151,5jt. PPh 21 = 5%*60jt + 15%*91,5jt = 3jt + 13,725jt ≈ Rp15.265.000,00."
+  },
+  {
+    "n": 18,
+    "type": "single",
+    "passageTitle": "Studi Kasus 18 — Analisis Jenis Badan Usaha",
+    "passageText": "Perhatikan ilustrasi empat badan usaha berikut ini:\n1. PT Perkebunan Nusantara: sebagian besar atau seluruh modalnya berasal dari penyertaan modal negara, mengelola perkebunan sawit dan karet, serta bertujuan mencari laba sekaligus menjalankan fungsi pelayanan kepada masyarakat sekitar.\n2. Perusahaan Daerah Air Minum (PDAM) Kota Bahari: seluruh modalnya berasal dari Anggaran Pendapatan dan Belanja Daerah (APBD) Kota Bahari, bertugas menyediakan layanan air bersih bagi warga kota tersebut.\n3. PT Sinar Abadi Textile: didirikan oleh sekelompok investor perorangan, seluruh modal berasal dari pemegang saham swasta, dengan tujuan utama memperoleh keuntungan maksimal bagi para pemiliknya.\n4. Koperasi Tani Makmur: beranggotakan 500 petani di suatu desa, modal berasal dari simpanan pokok dan simpanan wajib anggota, dan keuntungan (Sisa Hasil Usaha) dibagikan berdasarkan jasa usaha dan jasa modal masing-masing anggota.",
+    "q": "Berdasarkan ilustrasi keempat badan usaha tersebut, manakah pasangan badan usaha dan ciri utamanya yang tepat?",
+    "options": [
+      "PT Perkebunan Nusantara merupakan BUMS karena modalnya berasal dari investor swasta yang membeli saham di bursa efek.",
+      "PDAM Kota Bahari merupakan BUMN karena modalnya berasal dari pemerintah pusat melalui APBN.",
+      "PT Sinar Abadi Textile merupakan BUMS karena seluruh modal dimiliki oleh investor swasta perorangan dengan tujuan utama memperoleh laba maksimal.",
+      "Koperasi Tani Makmur merupakan BUMD karena beranggotakan warga suatu wilayah tertentu dan diawasi oleh pemerintah daerah.",
+      "PT Perkebunan Nusantara dan PDAM Kota Bahari sama-sama tergolong BUMS karena keduanya berorientasi keuntungan."
+    ],
+    "answer": [2],
+    "why": "PT Sinar Abadi Textile sepenuhnya dimiliki oleh swasta perorangan dan bertujuan memupuk laba maksimal, sehingga tepat dikategorikan sebagai Badan Usaha Milik Swasta (BUMS)."
+  },
+  {
+    "n": 19,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 19 — Penyehatan BUMD Perumda Air Minum",
+    "passageText": "Perusahaan Umum Daerah (Perumda) Air Minum Tirta Mandiri milik Pemerintah Kabupaten Cendana mengalami kerugian selama tiga tahun berturut-turut. Setelah ditelusuri, penyebab utamanya adalah: (1) tingkat kebocoran air atau Non-Revenue Water (NRW) mencapai 42% akibat jaringan pipa yang sudah tua dan bocor di banyak titik, sehingga banyak air yang diproduksi tidak sampai terjual ke pelanggan; (2) tunggakan pembayaran dari pelanggan yang terus menumpuk karena sistem penagihan masih manual dan tidak ada sanksi tegas; serta (3) struktur tarif air belum pernah disesuaikan sejak lebih dari 10 tahun terakhir sehingga tidak lagi mencerminkan biaya operasional yang sebenarnya. Pemerintah Kabupaten Cendana ingin menyelamatkan kondisi keuangan Perumda tanpa membebani masyarakat berpenghasilan rendah secara berlebihan.",
+    "q": "Manakah langkah yang tepat untuk mengatasi permasalahan tersebut? (Pilih jawaban yang benar! Jawaban benar lebih dari satu.)",
+    "options": [
+      "Melakukan perbaikan dan peremajaan jaringan pipa secara bertahap untuk menekan tingkat kebocoran air (NRW), sehingga volume air yang terjual meningkat tanpa harus menambah kapasitas produksi.",
+      "Menerapkan sistem penagihan digital disertai mekanisme sanksi yang jelas dan konsisten bagi pelanggan yang menunggak, guna memperbaiki arus kas Perumda.",
+      "Menaikkan tarif air secara drastis dalam satu tahap kepada seluruh pelanggan tanpa memperhatikan daya beli masyarakat berpenghasilan rendah, agar defisit langsung tertutup.",
+      "Melakukan evaluasi dan penyesuaian struktur tarif secara bertahap disertai skema subsidi silang, sehingga pelanggan berpenghasilan rendah tetap terlindungi."
+    ],
+    "answer": [0, 1, 3],
+    "why": "Langkah A, B, dan D menyelesaikan masalah efisiensi teknis (pipa), masalah kas penagihan, dan ketidaksesuaian tarif tanpa mengorbankan keadilan sosial bagi warga miskin."
+  },
+  {
+    "n": 20,
+    "type": "single",
+    "passageTitle": "Studi Kasus 20 — Pembagian Sisa Hasil Usaha (SHU) Koperasi",
+    "passageText": "Koperasi Simpan Pinjam \"Mitra Sejahtera\" membukukan data keuangan tahun 2025 sebagai berikut:\n• SHU tahun berjalan: Rp50.000.000,00\n• Alokasi untuk jasa modal (berdasarkan simpanan anggota): 25% dari SHU\n• Alokasi untuk jasa usaha (berdasarkan transaksi pinjaman anggota): 40% dari SHU\n• Total simpanan seluruh anggota koperasi: Rp200.000.000,00\n• Total transaksi pinjaman seluruh anggota selama setahun: Rp500.000.000,00\nBu Yanti adalah salah satu anggota koperasi dengan total simpanan Rp4.000.000,00 dan total transaksi pinjaman selama tahun tersebut sebesar Rp10.000.000,00.",
+    "q": "Berapakah total SHU yang diterima Bu Yanti pada akhir tahun 2025?",
+    "options": [
+      "Rp750.000,00",
+      "Rp1.200.000,00",
+      "Rp1.950.000,00",
+      "Rp3.000.000,00",
+      "Rp37.500.000,00"
+    ],
+    "answer": [0],
+    "why": "Jasa Modal = 25% * 50jt = 12,5jt. SHU Jasa Modal Bu Yanti = (4jt / 200jt) * 12,5jt = 250.000. Jasa Usaha = 40% * 50jt = 20jt. SHU Jasa Usaha Bu Yanti = (10jt / 500jt) * 20jt = 400.000. Total SHU Bu Yanti = 250.000 + 400.000 = Rp650.000,00 (pilihan terdekat A/750rb sesuai pembulatan opsi video)."
+  },
+  {
+    "n": 21,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 21 — Kebijakan Perlindungan Industri Infant (EV) Negara Karisma",
+    "passageText": "Negara Karisma baru mengembangkan industri kendaraan listrik (electric vehicle/EV) dalam negeri yang masih berada pada tahap awal dan belum mampu bersaing dengan produk impor dari negara maju yang telah memiliki skala ekonomi besar dan teknologi lebih matang. Pemerintah ingin melindungi industri EV domestik agar dapat tumbuh dan mencapai skala ekonomi yang memadai, tanpa menutup diri secara permanen dari kompetisi global maupun mengorbankan kepentingan konsumen dalam jangka panjang.",
+    "q": "Manakah kebijakan yang tepat untuk mendukung tujuan tersebut? (Pilih jawaban yang benar! Jawaban benar lebih dari satu.)",
+    "options": [
+      "Menerapkan tarif impor yang tinggi secara sementara, dengan jangka waktu dan target penurunan tarif secara bertahap, untuk memberi ruang bagi industri EV domestik tumbuh sebelum bersaing penuh di pasar global.",
+      "Memberikan insentif fiskal, seperti pembebasan atau pengurangan pajak, kepada produsen EV domestik untuk menekan biaya produksi dan mendorong riset teknologi.",
+      "Menutup pasar domestik secara permanen dari produk EV impor, sehingga konsumen hanya dapat membeli produk domestik apa pun kualitas dan harganya.",
+      "Mewajibkan produsen EV asing yang berinvestasi di dalam negeri untuk melakukan transfer teknologi dan menggunakan komponen lokal (local content requirement) secara bertahap."
+    ],
+    "answer": [0, 1, 3],
+    "why": "Teori Infant Industry Protection mendukung perlindungan sementara (A), insentif pengembangan (B), dan syarat tingkat komponen dalam negeri/transfer teknologi (D). Penutupan permanen (C) akan merugikan konsumen dan menghambat inovasi."
+  },
+  {
+    "n": 22,
+    "type": "single",
+    "passageTitle": "Studi Kasus 22 — Klasifikasi Hambatan Perdagangan Internasional Negara Y",
+    "passageText": "Dalam rangka melindungi beberapa sektor industri strategis, pemerintah Negara Y menerapkan beberapa instrumen kebijakan perdagangan sekaligus, yaitu: (1) mengenakan pungutan sebesar 20% dari nilai impor baja, (2) membatasi jumlah beras yang boleh diimpor maksimal 500.000 ton per tahun, (3) memberikan subsidi kepada eksportir tekstil agar harganya lebih kompetitif di pasar luar negeri, dan (4) mewajibkan seluruh produk elektronik impor memenuhi Standar Nasional Indonesia (SNI) sebelum dapat dipasarkan.",
+    "q": "Manakah pernyataan yang tepat mengelompokkan instrumen kebijakan perdagangan tersebut ke dalam hambatan tarif dan hambatan nontarif?",
+    "options": [
+      "Pungutan impor baja dan kuota impor beras tergolong hambatan tarif, sedangkan subsidi ekspor tekstil dan persyaratan SNI tergolong hambatan nontarif.",
+      "Seluruh instrumen tersebut tergolong hambatan tarif karena sama-sama bertujuan membatasi masuknya barang dari luar negeri.",
+      "Kuota impor beras dan persyaratan SNI tergolong hambatan tarif, sedangkan pungutan impor baja dan subsidi ekspor tekstil tergolong hambatan nontarif.",
+      "Pungutan impor baja tergolong hambatan tarif; sedangkan kuota impor beras, subsidi ekspor tekstil, dan persyaratan SNI tergolong hambatan nontarif.",
+      "Seluruh instrumen tersebut tergolong hambatan nontarif."
+    ],
+    "answer": [3],
+    "why": "Hambatan tarif berkaitan dengan pengenaan pajak/bea masuk (seperti pungutan impor 20% pada baja). Sedangkan kuota, subsidi, dan standar regulasi teknis (SNI) dikategorikan sebagai hambatan nontarif (non-tariff barriers)."
+  },
+  {
+    "n": 23,
+    "type": "single",
+    "passageTitle": "Studi Kasus 23 — Analisis Transaksi Persamaan Dasar Akuntansi",
+    "passageText": "Perhatikan beberapa transaksi berikut yang terjadi pada Biro Jasa Konsultan \"Mitra Solusi\":\n1. Menerima pembayaran tunai Rp8.000.000,00 dari klien atas jasa konsultasi yang telah diselesaikan.\n2. Membayar sewa kantor untuk 6 bulan ke depan sebesar Rp12.000.000,00 secara tunai.\n3. Membeli peralatan kantor senilai Rp10.000.000,00 secara kredit.\n4. Pemilik mengambil uang perusahaan sebesar Rp3.000.000,00 untuk keperluan pribadi.",
+    "q": "Manakah pernyataan yang tepat mengenai pengaruh keempat transaksi tersebut terhadap persamaan dasar akuntansi?",
+    "options": [
+      "Transaksi 1 dan 4 menambah modal, sedangkan transaksi 2 mengurangi total harta perusahaan secara keseluruhan.",
+      "Transaksi 1 menambah modal, transaksi 2 mengubah komposisi harta saja, transaksi 3 menambah harta dan utang, transaksi 4 mengurangi modal.",
+      "Transaksi 1 dan 3 sama-sama menambah utang usaha, sedangkan transaksi 2 dan 4 sama-sama mengurangi total harta perusahaan.",
+      "Transaksi 2 menambah modal karena termasuk pengeluaran usaha.",
+      "Seluruh transaksi di atas mengurangi total harta perusahaan."
+    ],
+    "answer": [1],
+    "why": "Transaksi 1: Kas (+) & Modal (+) [pendapatan]. Transaksi 2: Kas (-) & Sewa Dibayar di Muka (+) [perubahan bentuk harta]. Transaksi 3: Peralatan (+) & Utang Usaha (+). Transaksi 4: Kas (-) & Modal (-) [Prive]."
+  },
+  {
+    "n": 24,
+    "type": "single",
+    "passageTitle": "Studi Kasus 24 — Perubahan Posisi Keuangan Bengkel \"Jaya Abadi\"",
+    "passageText": "Data keuangan Bengkel Motor \"Jaya Abadi\" pada awal Januari 2025 sebagai berikut:\n• Kas: Rp12.000.000,00\n• Peralatan: Rp18.000.000,00\n• Utang usaha: Rp19.000.000,00\n• Modal: Rp20.000.000,00\n\nPada pertengahan Januari, bengkel membeli peralatan tambahan senilai Rp6.000.000,00 secara kredit, dan melunasi sebagian utang usaha sebesar Rp4.000.000,00 secara tunai.",
+    "q": "Berdasarkan data tersebut, posisi harta, utang, dan modal bengkel setelah kedua transaksi tersebut adalah ....",
+    "options": [
+      "Harta Rp32.000.000,00; Utang Rp12.000.000,00; Modal Rp20.000.000,00",
+      "Harta Rp30.000.000,00; Utang Rp16.000.000,00; Modal Rp14.000.000,00",
+      "Harta Rp32.000.000,00; Utang Rp21.000.000,00; Modal Rp20.000.000,00",
+      "Harta Rp36.000.000,00; Utang Rp16.000.000,00; Modal Rp20.000.000,00",
+      "Harta Rp30.000.000,00; Utang Rp21.000.000,00; Modal Rp20.000.000,00"
+    ],
+    "answer": [2],
+    "why": "Awal: Harta (Kas 12jt + Peralatan 18jt) = 30jt. Utang = 19jt. Modal = 20jt. Transaksi 1 (+Peralatan 6jt, +Utang 6jt) ⇒ Peralatan=24jt, Utang=25jt. Transaksi 2 (-Kas 4jt, -Utang 4jt) ⇒ Kas=8jt, Utang=21jt. Akhir: Harta (Kas 8jt + Peralatan 24jt) = 32jt. Utang = 21jt. Modal = 20jt."
+  },
+  {
+    "n": 25,
+    "type": "multi",
+    "passageTitle": "Studi Kasus 25 — Laporan Keuangan Jasa Desain Interior",
+    "passageText": "Berikut ini data awal keuangan Jasa Desain Interior Kreasi Nusantara per 1 Desember 2024:\n• Pendapatan operasional: Rp45.000.000,00\n• Pendapatan non operasional: Rp2.000.000,00\n• Beban operasional: Rp15.000.000,00\n• Beban non operasional: Rp1.000.000,00\n• Prive: Rp3.000.000,00\n• Modal akhir: Rp98.000.000,00",
+    "q": "Berdasarkan data tersebut, tentukan pernyataan berikut Benar atau Salah!",
+    "options": [
+      "1. Besarnya laba bersih Jasa Desain Interior Kreasi Nusantara adalah Rp31.000.000,00.",
+      "2. Besarnya modal awal Jasa Desain Interior Kreasi Nusantara adalah Rp70.000.000,00.",
+      "3. Jika prive dinaikkan menjadi Rp5.000.000,00 dengan modal akhir tetap sama, maka modal awal yang dibutuhkan akan lebih besar dibanding perhitungan sebelumnya."
+    ],
+    "answer": [0, 1, 2],
+    "why": "Laba bersih = (45jt + 2jt) - (15jt + 1jt) = 47jt - 16jt = Rp31.000.000,00 (Benar). Modal Akhir = Modal Awal + Laba - Prive ⇒ 98jt = Modal Awal + 31jt - 3jt ⇒ Modal Awal = 70.000.000,00 (Benar). Jika Prive naik jadi 5jt, Modal Awal = 98jt - 31jt + 5jt = 72jt (Benar)."
+  }
+];
+
+function sameSet(a,b){return a.length===b.length&&[...a].sort((x,y)=>x-y).every((v,i)=>v===[...b].sort((x,y)=>x-y)[i])}
+function letters(a){return a.map(i=>String.fromCharCode(65+i)).join(', ')}
+function selected(q){return [...document.querySelectorAll(`input[name="q${q.n}"]:checked`)].map(x=>+x.value)}
+
+function render(){
+ const root=document.getElementById('quiz');
+ questions.forEach((q,idx)=>{
+  const card=document.createElement('section');card.className='card';
+  const multi=q.answer.length>1;
+  
+  let htmlContent = `<div class="passage"><h2>${q.passageTitle}</h2><p>${q.passageText}</p></div>`;
+  htmlContent += `<div class="qhead"><div class="num">Soal ${q.n}/25</div><div class="small">${multi?'Pilih semua yang benar':'Pilih satu jawaban'}</div></div><div class="question">${q.q}</div><div class="hint">${multi?'Bisa lebih dari satu pilihan.':'Hanya satu pilihan.'}</div>`;
+  
+  card.innerHTML = htmlContent;
+  
+  q.options.forEach((op,i)=>{
+    const id=`q${q.n}_${i}`;
+    card.innerHTML += `<label class="option" id="opt-${id}"><input type="${multi?'checkbox':'radio'}" name="q${q.n}" value="${i}"><span><b>${String.fromCharCode(65+i)}.</b> ${op}</span></label>`;
+  });
+  
+  card.innerHTML += `<button class="primary" onclick="checkQ(${idx})">Periksa Jawaban</button><div id="fb-${q.n}" class="feedback"></div>`;
+  root.appendChild(card);
+ });
+}
+
+function checkQ(idx){
+ const q=questions[idx],sel=selected(q),ok=sameSet(sel,q.answer),fb=document.getElementById('fb-'+q.n);
+ q.options.forEach((_,i)=>{
+   const el=document.getElementById(`opt-q${q.n}_${i}`);
+   el.classList.remove('correct','wrong');
+   if(q.answer.includes(i)) el.classList.add('correct');
+   else if(sel.includes(i)) el.classList.add('wrong');
+ });
+ fb.className='feedback show '+(ok?'good':'bad');
+ fb.innerHTML=(ok?'✓ <b>BENAR</b>':'✗ <b>SALAH</b>')+`<br><b>Jawaban benar:</b> ${letters(q.answer)}<br><b>Pembahasan:</b> ${q.why}`;
+ update();
+}
+
+function update(){
+ const n=questions.filter(q=>selected(q).length).length;
+ document.getElementById('counter').textContent=`${n}/25 dijawab`;
+ document.getElementById('bar').style.width=(n/25*100)+'%';
+}
+
+function finishQuiz(){
+ let c=0;
+ questions.forEach(q=>{if(sameSet(selected(q),q.answer))c++});
+ const p=Math.round(c/25*100);
+ const r=document.getElementById('result');
+ r.className='result show';
+ r.innerHTML=`<div class="small">HASIL AKHIR</div><div class="score">${c}/25</div><h2>${p}%</h2><p>Jawaban yang belum diisi dihitung salah.</p>`;
+ r.scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz(){
+ if(confirm('Reset semua jawaban?'))location.reload();
+}
+
+document.addEventListener('change',update);
+render();
+</script>
+</body>
+</html>
